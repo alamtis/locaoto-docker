@@ -1,1 +1,72 @@
-import './bootstrap';
+import "./bootstrap";
+import "../css/app.css";
+import { createApp } from "vue";
+import { createPinia } from "pinia";
+import Main from "@/views/guest/Main.vue";
+import router from "@/router/index.js";
+import PrimeVue from "primevue/config";
+import "primevue/resources/themes/tailwind-light/theme.css";
+import "primevue/resources/primevue.min.css";
+import "primeicons/primeicons.css";
+
+// global components
+import Authenticated from "./layouts/Authenticated.vue";
+
+// primevue components
+import InputText from "primevue/inputtext";
+import InputMask from "primevue/inputmask";
+import InputNumber from "primevue/inputnumber";
+import Password from "primevue/password";
+import Dropdown from "primevue/dropdown";
+import MultiSelect from "primevue/multiselect";
+import Checkbox from "primevue/checkbox";
+import RadioButton from "primevue/radiobutton";
+import Calendar from "primevue/calendar";
+import Button from "primevue/button";
+import Dialog from "primevue/dialog";
+import DataTable from "primevue/datatable";
+import Column from "primevue/column";
+import Toast from "primevue/toast";
+import DataView from "primevue/dataview";
+import Tooltip from "primevue/tooltip";
+import Carousel from "primevue/carousel";
+import Badge from "primevue/badge";
+import SpeedDial from "primevue/speeddial";
+import InputSwitch from "primevue/inputswitch";
+import FileUpload from "primevue/fileupload";
+import Image from "primevue/image";
+import Chart from "primevue/chart";
+import Timeline from "primevue/timeline";
+
+const pinia = createPinia();
+const app = createApp(Main);
+
+app.use(pinia);
+app.use(router);
+app.use(PrimeVue, { ripple: true });
+app.component("Authenticated", Authenticated);
+app.component("InputText", InputText);
+app.component("InputMask", InputMask);
+app.component("InputNumber", InputNumber);
+app.component("Password", Password);
+app.component("Dropdown", Dropdown);
+app.component("MultiSelect", MultiSelect);
+app.component("Checkbox", Checkbox);
+app.component("RadioButton", RadioButton);
+app.component("Calendar", Calendar);
+app.component("Button", Button);
+app.component("Dialog", Dialog);
+app.component("DataTable", DataTable);
+app.component("Column", Column);
+app.component("Toast", Toast);
+app.component("DataView", DataView);
+app.component("Tooltip", Tooltip);
+app.component("Carousel", Carousel);
+app.component("Badge", Badge);
+app.component("SpeedDial", SpeedDial);
+app.component("InputSwitch", InputSwitch);
+app.component("FileUpload", FileUpload);
+app.component("Image", Image);
+app.component("Chart", Chart);
+app.component("Timeline", Timeline);
+app.mount("#app");

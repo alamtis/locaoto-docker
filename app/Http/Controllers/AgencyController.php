@@ -12,12 +12,16 @@ class AgencyController extends Controller
     public function index()
     {
         return QueryBuilder::for(Agency::class)
-            ->paginate();
+            ->select(['id', 'name'])
+            ->with('location')
+            ->get();
     }
 
     public function store(StoreAgencyRequest $request)
     {
-        Agency::create($request->validated());
+        $agency = $request->validated();
+        $agency['logo'] = $request->file('logo')->store('images/logos');
+        Agency::create($agency);
         return response()->json(['message' => 'Agency created successfully'], 201);
     }
 

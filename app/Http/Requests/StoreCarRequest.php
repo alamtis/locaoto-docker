@@ -9,15 +9,20 @@ class StoreCarRequest extends FormRequest
 
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     public function rules()
     {
         return [
-            'brand_model_id' => ['required', 'integer', 'exists:brand_models,id'],
+            'brand' => ['required', 'integer', 'exists:brands,id'],
+            'model' => ['required', 'integer', 'exists:brand_models,id'],
+            'fuel' => ['required', 'string', 'in:essence,diesel,hybride,electrique'],
+            'transmission' => ['required', 'string', 'in:manuelle,automatique'],
+            'doors' => ['required', 'integer', 'min:2', 'max:4'],
+            'passangers' => ['required', 'integer', 'min:2', 'max:5'],
+            'air_conditioning' => ['required', 'boolean'],
             'identity' => ['required', 'string', 'max:255'],
-            'image' => ['image', 'max:1024', 'mimes:jpeg,png,jpg,gif,svg'],
         ];
     }
 }

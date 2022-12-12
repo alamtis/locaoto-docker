@@ -6,13 +6,16 @@ use App\Http\Requests\StoreBrandModelRequest;
 use App\Http\Requests\UpdateBrandModelRequest;
 use App\Models\BrandModel;
 use Spatie\QueryBuilder\QueryBuilder;
+use Spatie\QueryBuilder\AllowedFilter;
 
 class BrandModelController extends Controller
 {
     public function index()
     {
         return QueryBuilder::for(BrandModel::class)
-            ->paginate();
+            ->allowedFilters([AllowedFilter::exact('brand_id')])
+            ->select(['id', 'name'])
+            ->get();
     }
 
     public function store(StoreBrandModelRequest $request)

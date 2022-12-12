@@ -5,10 +5,28 @@
         "build": "vite build"
     },
     "devDependencies": {
-        "axios": "^1.1.2",
+        "autoprefixer": "^10.4.13",
         "laravel-vite-plugin": "^0.6.0",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
+        "postcss": "^8.4.19",
+        "sass": "^1.54.1",
+        "tailwindcss": "^3.2.4",
         "vite": "^3.0.0"
+    },
+    "dependencies": {
+        "@fullcalendar/core": "^5.11.3",
+        "@fullcalendar/daygrid": "^5.11.3",
+        "@fullcalendar/interaction": "^5.11.3",
+        "@fullcalendar/timegrid": "^5.11.3",
+        "@fullcalendar/vue3": "^5.11.3",
+        "@vitejs/plugin-vue": "^3.2.0",
+        "axios": "^1.1.2",
+        "chart.js": "^3.9.1",
+        "pinia": "^2.0.27",
+        "primeicons": "^6.0.1",
+        "primevue": "^3",
+        "vue": "^3.2.36",
+        "vue-loader": "^17.0.1",
+        "vue-router": "4"
     }
 }

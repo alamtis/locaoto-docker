@@ -8,7 +8,7 @@ class StoreAgencyRequest extends FormRequest
 {
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     public function rules()
@@ -18,7 +18,8 @@ class StoreAgencyRequest extends FormRequest
             'address' => 'required|string',
             'phone' => 'required|string',
             'email' => 'required|string|email|unique:agencies,email',
-            'location' => 'required|string',
+            'location_id' => 'required|string',
+            'password' => 'required|string',
             'logo' => 'image|mimes:jpeg,png,jpg|max:1024',
         ];
     }

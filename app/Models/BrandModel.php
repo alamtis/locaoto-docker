@@ -9,10 +9,7 @@ class BrandModel extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'brand_id',
-        'name',
-    ];
+    protected $guarded = [];
 
     public function brand()
     {

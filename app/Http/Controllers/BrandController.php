@@ -12,8 +12,7 @@ class BrandController extends Controller
 
     public function index()
     {
-        return QueryBuilder::for(Brand::class)
-            ->paginate();
+        return Brand::select(['id', 'name'])->get();
     }
 
     public function store(StoreBrandRequest $request)

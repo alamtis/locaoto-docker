@@ -14,7 +14,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('phone');
-            $table->string('email');
+            $table->string('email')->unique();
+            $table->string('password');
             $table->string('logo')->default('default_agency.png');
             $table->timestamps();
         });

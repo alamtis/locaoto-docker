@@ -12,6 +12,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('brand_model_id')->constrained();
             $table->foreignId('agency_id')->constrained();
+            $table->string('fuel');
+            $table->string('transmission');
+            $table->integer('doors');
+            $table->integer('passangers');
+            $table->boolean('air_conditioning');
             $table->string('identity');
             $table->string('image');
             $table->timestamps();
