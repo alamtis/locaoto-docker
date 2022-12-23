@@ -2,7 +2,7 @@ import "./bootstrap";
 import "../css/app.css";
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-import Main from "@/views/guest/Main.vue";
+import Main from "@/views/guest/App.vue";
 import router from "@/router/index.js";
 import PrimeVue from "primevue/config";
 import "primevue/resources/themes/tailwind-light/theme.css";

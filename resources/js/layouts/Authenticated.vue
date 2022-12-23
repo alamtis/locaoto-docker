@@ -16,13 +16,13 @@ const sideMenu = useSideMenuStore();
         <TheSideBar />
         <!-- Backdrop -->
         <TheBackdrop />
-        <div class="flex flex-col flex-1">
+        <div class="flex flex-1 flex-col">
             <!-- Nav header -->
             <TheNavHeader />
             <main class="h-full pb-16">
                 <div class="container">
                     <div class="p-8">
-                        <slot />
+                        <router-view />
                     </div>
                 </div>
             </main>

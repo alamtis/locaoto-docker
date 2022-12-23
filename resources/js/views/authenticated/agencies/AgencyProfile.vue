@@ -1,6 +1,2 @@
-<script setup>
-import { ref, defineProps } from "vue";
-</script>
-<template>
-    <Authenticated> </Authenticated>
-</template>
+<script setup></script>
+<template></template>
